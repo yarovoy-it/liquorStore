@@ -1,0 +1,7 @@
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+liquorStore/bin/
+liquorStore/.settings/
+liquorStore/.project
+liquorStore/.classpath
