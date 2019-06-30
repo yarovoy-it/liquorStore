@@ -6,7 +6,7 @@ public class PersonDetail {
 
 	private String address;
 
-	private int phone;
+	private Integer phone;
 
 	public PersonDetail() {
 	}
@@ -33,7 +33,7 @@ public class PersonDetail {
 		this.address = address;
 	}
 
-	public int getPhone() {
+	public Integer getPhone() {
 		return phone;
 	}
 

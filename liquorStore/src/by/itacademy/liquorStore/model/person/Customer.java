@@ -2,20 +2,21 @@ package by.itacademy.liquorStore.model.person;
 
 import java.util.List;
 
-import by.itacademy.liquorStore.model.alcohol.AAlcohol;
+import by.itacademy.liquorStore.model.alcohol.Alcohol;
 
 public class Customer extends PersonDetail {
 
-	private int discount;
+	private Integer discount;
 
 	private String status;
 
-	private List<AAlcohol> alcohols;
+	private List<Alcohol> alcohols;
 
 	public Customer() {
 	}
 
-	public Customer(String name, String address, int phone, int discount, String status, List<AAlcohol> alcohols) {
+	public Customer(String name, String address, int phone, int discount, String status,
+			List<Alcohol> alcohols) {
 		super(name, address, phone);
 		this.discount = discount;
 		this.status = status;
@@ -28,7 +29,7 @@ public class Customer extends PersonDetail {
 		this.status = status;
 	}
 
-	public int getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
 
@@ -44,11 +45,11 @@ public class Customer extends PersonDetail {
 		this.status = status;
 	}
 
-	public List<AAlcohol> getAlcohols() {
+	public List<Alcohol> getAlcohols() {
 		return alcohols;
 	}
 
-	public void setAlcohols(List<AAlcohol> alcohols) {
+	public void setAlcohols(List<Alcohol> alcohols) {
 		this.alcohols = alcohols;
 	}
 

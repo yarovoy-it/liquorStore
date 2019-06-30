@@ -1,20 +1,31 @@
 package by.itacademy.liquorStore.model.alcohol;
 
-public abstract class ALiquid {
+public abstract class Liquid {
 
-	private double volume;
+	private Double volume;
 
 	private String name;
 
-	private int price;
+	private Integer price;
 
-	public ALiquid(double volume, String name, int price) {
+	private Integer amount;
+
+	public Liquid(Double volume, String name, Integer price, Integer amount) {
+		this.amount = amount;
 		this.volume = volume;
 		this.name = name;
 		this.price = price;
 	}
 
-	public double getVolume() {
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+
+	public Double getVolume() {
 		return volume;
 	}
 
@@ -30,7 +41,7 @@ public abstract class ALiquid {
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
 

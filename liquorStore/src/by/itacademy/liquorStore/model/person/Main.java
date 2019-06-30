@@ -3,7 +3,7 @@ package by.itacademy.liquorStore.model.person;
 import java.util.ArrayList;
 import java.util.List;
 
-import by.itacademy.liquorStore.model.alcohol.AAlcohol;
+import by.itacademy.liquorStore.model.alcohol.Alcohol;
 import by.itacademy.liquorStore.model.alcohol.Beer;
 import by.itacademy.liquorStore.model.alcohol.Wine;
 import by.itacademy.liquorStore.model.person.*;
@@ -12,9 +12,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Beer beer = new Beer(34, "Бархотное", 15, "Беларусь", 3);
-		Wine wine = new Wine("Хванчкара", 10, "Грузия", 13, "Грузия");
-		AAlcohol aalcohol = (AAlcohol) wine;
+		Beer beer = new Beer(34, "Бархотное", 15, "Беларусь", 3, 1);
+		Wine wine = new Wine("Хванчкара", 10, "Грузия", 13, "Грузия", 1);
+		Alcohol aalcohol = (Alcohol) wine;
 
 		PersonDetail pd = new PersonDetail("ВАСЯ", "homeless", 228);
 		List<String> str = new ArrayList();
