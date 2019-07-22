@@ -5,7 +5,7 @@ import java.util.List;
 import by.itacademy.liquorStore.model.alcohol.Alcohol;
 import by.itacademy.liquorStore.model.person.Customer;
 
-public interface CustomerDao extends PersonDetailDao {
+public interface CustomerDao extends PersonDetailDao<Customer> {
 
 	List<Customer> getCustomerByAlcohol(Alcohol alcohol);
 

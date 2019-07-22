@@ -1,11 +1,11 @@
 package by.itacademy.liquorStore.dao.alcohol;
 
-import java.util.List;
+import java.util.Set;
 
 import by.itacademy.liquorStore.model.alcohol.Whisky;
 
-public interface WhiskyDao extends AlcoholDao {
+public interface WhiskyDao extends AlcoholDao<Whisky> {
 
-	List<Whisky> getWhiskyBySpecificities(String specificities);
+	Set<Whisky> getWhiskyBySpecificities(String specificities);
 
 }

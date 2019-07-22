@@ -1,10 +1,13 @@
 package by.itacademy.liquorStore.dao.impl.person;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import by.itacademy.liquorStore.dao.person.AdminDao;
 import by.itacademy.liquorStore.model.person.Admin;
-import by.itacademy.liquorStore.model.person.PersonDetail;
+
+import static java.util.Optional.empty;
 
 public class AdminDaoImpl implements AdminDao {
 
@@ -22,69 +25,58 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByAddress(String address) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getPersonDetailByAddress(String address) {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getPersonDetailByPhone(String phone) {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public Admin save(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> save(Admin t) {
+		return empty();
 	}
 
 	@Override
-	public Admin update(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> update(Admin t) {
+		return empty();
 	}
 
 	@Override
-	public List<Object> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getAll() {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public Admin getByName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> getByName(String name) {
+		return empty();
 	}
 
 	@Override
-	public void delete(Object object) {
-		// TODO Auto-generated method stub
+	public void delete(Admin t) {
 
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void deleteByName(String Name) {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) {
 
 	}
 
 	@Override
 	public List<Admin> getCustomerByPosition(String position) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 	@Override
 	public List<Admin> getCustomerByTasks(String tasks) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 }

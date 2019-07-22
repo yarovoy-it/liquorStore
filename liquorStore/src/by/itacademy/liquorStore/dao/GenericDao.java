@@ -1,21 +1,22 @@
 package by.itacademy.liquorStore.dao;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Optional;
 
-public interface GenericDao {
+public interface GenericDao<T> {
 
-	Object save(Object object);
+	Optional<T> save(T t);
 
-	Object update(Object object);
+	Optional<T> update(T t);
 
-	List<Object> getAll();
+	Collection<T> getAll();
 
-	Object getByName(String Name);
+	Optional<T> getByName(String name);
 
-	void delete(Object object);
+	void delete(T t);
 
 	void deleteAll();
 
-	void deleteByName(String Name);
+	void deleteByName(String name);
 
 }

@@ -1,11 +1,11 @@
 package by.itacademy.liquorStore.service.impl.person;
 
 import java.util.List;
+import java.util.Optional;
 
 import by.itacademy.liquorStore.dao.impl.person.AdminDaoImpl;
 import by.itacademy.liquorStore.dao.person.AdminDao;
 import by.itacademy.liquorStore.model.person.Admin;
-import by.itacademy.liquorStore.model.person.PersonDetail;
 import by.itacademy.liquorStore.service.person.AdminService;
 
 public class AdminServiceImpl implements AdminService {
@@ -26,69 +26,58 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByAddress(String address) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getPersonDetailByAddress(String address) {
+		return adminDao.getPersonDetailByAddress(address);
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getPersonDetailByPhone(String phone) {
+		return adminDao.getPersonDetailByPhone(phone);
 	}
 
 	@Override
-	public Object save(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> save(Admin object) {
+		return adminDao.save(object);
 	}
 
 	@Override
-	public Object update(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> update(Admin object) {
+		return adminDao.update(object);
 	}
 
 	@Override
-	public List<Object> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Admin> getAll() {
+		return (List<Admin>) adminDao.getAll();
 	}
 
 	@Override
-	public Object getByName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Admin> getByName(String name) {
+		return adminDao.getByName(name);
 	}
 
 	@Override
-	public void delete(Object object) {
-		// TODO Auto-generated method stub
-
+	public void delete(Admin object) {
+		adminDao.delete(object);
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-
+		adminDao.deleteAll();
 	}
 
 	@Override
-	public void deleteByName(String Name) {
-		// TODO Auto-generated method stub
-
+	public void deleteByName(String name) {
+		adminDao.deleteByName(name);
 	}
 
 	@Override
 	public List<Admin> getCustomerByPosition(String position) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminDao.getCustomerByPosition(position);
 	}
 
 	@Override
 	public List<Admin> getCustomerByTasks(String tasks) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminDao.getCustomerByTasks(tasks);
 	}
 
 }

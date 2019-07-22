@@ -1,11 +1,15 @@
 package by.itacademy.liquorStore.dao.impl.person;
 
 import java.util.List;
+import java.util.Optional;
 
 import by.itacademy.liquorStore.dao.person.CustomerDao;
 import by.itacademy.liquorStore.model.alcohol.Alcohol;
 import by.itacademy.liquorStore.model.person.Customer;
-import by.itacademy.liquorStore.model.person.PersonDetail;
+
+import static java.util.Optional.empty;
+
+import java.util.ArrayList;
 
 public class CustomerDaoImpl implements CustomerDao {
 
@@ -23,75 +27,61 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByAddress(String address) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Customer> getPersonDetailByAddress(String address) {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public List<PersonDetail> getPersonDetailByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Customer> getPersonDetailByPhone(String phone) {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public Customer save(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Customer> save(Customer t) {
+		return empty();
 	}
 
 	@Override
-	public Customer update(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Customer> update(Customer t) {
+		return empty();
 	}
 
 	@Override
-	public List<Object> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Customer> getAll() {
+		return new ArrayList<>();
 	}
 
 	@Override
-	public Customer getByName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Customer> getByName(String name) {
+		return empty();
 	}
 
 	@Override
-	public void delete(Object object) {
-		// TODO Auto-generated method stub
+	public void delete(Customer t) {
 
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
-	public void deleteByName(String Name) {
-		// TODO Auto-generated method stub
-
+	public void deleteByName(String name) {
 	}
 
 	@Override
 	public List<Customer> getCustomerByAlcohol(Alcohol alcohol) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 	@Override
 	public List<Customer> getCustomerByDiscount(int discount) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 	@Override
 	public List<Customer> getCustomerByStatus(String status) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 }

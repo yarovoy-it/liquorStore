@@ -1,5 +1,7 @@
 package by.itacademy.liquorStore.service.alcohol;
 
-public interface BeerService extends AlcoholService {
+import by.itacademy.liquorStore.model.alcohol.Beer;
+
+public interface BeerService extends AlcoholService<Beer> {
 
 }

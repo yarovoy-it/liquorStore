@@ -4,8 +4,8 @@ import java.util.List;
 
 import by.itacademy.liquorStore.model.alcohol.Alcohol;
 
-public interface AlcoholDao extends LiquidDao {
+public interface AlcoholDao<T extends Alcohol> extends LiquidDao<T> {
 
-	List<Alcohol> getLiquidByCountry(String country);
+	List<T> getAlcoholByCountry(String country);
 
 }

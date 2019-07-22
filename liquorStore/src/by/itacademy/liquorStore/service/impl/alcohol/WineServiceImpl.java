@@ -1,11 +1,10 @@
 package by.itacademy.liquorStore.service.impl.alcohol;
 
 import java.util.List;
+import java.util.Optional;
 
 import by.itacademy.liquorStore.dao.alcohol.WineDao;
 import by.itacademy.liquorStore.dao.impl.alcohol.WineDaoImpl;
-import by.itacademy.liquorStore.model.alcohol.Alcohol;
-import by.itacademy.liquorStore.model.alcohol.Liquid;
 import by.itacademy.liquorStore.model.alcohol.Wine;
 import by.itacademy.liquorStore.service.alcohol.WineService;
 
@@ -27,75 +26,66 @@ public class WineServiceImpl implements WineService {
 	}
 
 	@Override
-	public List<Liquid> getLiquidByVolme(Double volume) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Wine> getLiquidByVolme(Double volume) {
+		return wineDao.getLiquidByVolme(volume);
 	}
 
 	@Override
-	public List<Liquid> getLiquidByPrice(Integer price) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Wine> getLiquidByPrice(Integer price) {
+		return wineDao.getLiquidByPrice(price);
 	}
 
 	@Override
-	public List<Liquid> getLiquidByAmount(Integer amount) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Wine> getLiquidByAmount(Integer amount) {
+		return wineDao.getLiquidByAmount(amount);
 	}
 
 	@Override
-	public Wine save(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Wine> save(Wine object) {
+		return wineDao.save(object);
 	}
 
 	@Override
-	public Wine update(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Wine> update(Wine object) {
+		return wineDao.update(object);
 	}
 
 	@Override
-	public List<Object> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Wine> getAll() {
+		return (List<Wine>) wineDao.getAll();
 	}
 
 	@Override
-	public Wine getByName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Wine> getByName(String name) {
+		return wineDao.getByName(name);
 	}
 
 	@Override
-	public void delete(Object object) {
-		// TODO Auto-generated method stub
+	public void delete(Wine object) {
+		wineDao.delete(object);
 
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
+		wineDao.deleteAll();
 
 	}
 
 	@Override
-	public void deleteByName(String Name) {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) {
+		wineDao.deleteByName(name);
 
 	}
 
 	@Override
 	public List<Wine> getLiquidByRegion(String region) {
-		// TODO Auto-generated method stub
-		return null;
+		return wineDao.getLiquidByRegion(region);
 	}
 
 	@Override
-	public List<Alcohol> getLiquidByCountry(String country) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Wine> getLiquidByCountry(String country) {
+		return wineDao.getAlcoholByCountry(country);
 	}
 
 }

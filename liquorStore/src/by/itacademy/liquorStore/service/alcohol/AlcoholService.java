@@ -4,8 +4,8 @@ import java.util.List;
 
 import by.itacademy.liquorStore.model.alcohol.Alcohol;
 
-public interface AlcoholService extends LiquidService {
+public interface AlcoholService<T extends Alcohol> extends LiquidService<T> {
 
-	List<Alcohol> getLiquidByCountry(String country);
+	List<T> getLiquidByCountry(String country);
 
 }

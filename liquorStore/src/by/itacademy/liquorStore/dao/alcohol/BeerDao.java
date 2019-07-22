@@ -1,5 +1,7 @@
 package by.itacademy.liquorStore.dao.alcohol;
 
-public interface BeerDao extends AlcoholDao {
+import by.itacademy.liquorStore.model.alcohol.Beer;
+
+public interface BeerDao extends AlcoholDao<Beer> {
 
 }

@@ -2,15 +2,14 @@ package by.itacademy.liquorStore.service.alcohol;
 
 import java.util.List;
 
-import by.itacademy.liquorStore.model.alcohol.Liquid;
 import by.itacademy.liquorStore.service.GenericService;
 
-public interface LiquidService extends GenericService {
+public interface LiquidService<T> extends GenericService<T> {
 
-	List<Liquid> getLiquidByVolme(Double volume);
+	List<T> getLiquidByVolme(Double volume);
 
-	List<Liquid> getLiquidByPrice(Integer price);
+	List<T> getLiquidByPrice(Integer price);
 
-	List<Liquid> getLiquidByAmount(Integer amount);
+	List<T> getLiquidByAmount(Integer amount);
 
 }

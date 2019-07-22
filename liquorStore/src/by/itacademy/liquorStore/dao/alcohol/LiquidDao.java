@@ -3,14 +3,14 @@ package by.itacademy.liquorStore.dao.alcohol;
 import java.util.List;
 
 import by.itacademy.liquorStore.dao.GenericDao;
-import by.itacademy.liquorStore.model.alcohol.Liquid;
+import by.itacademy.liquorStore.model.alcohol.Alcohol;
 
-public interface LiquidDao extends GenericDao {
+public interface LiquidDao<T extends Alcohol> extends GenericDao<T> {
 
-	List<Liquid> getLiquidByVolme(Double volume);
+	List<T> getLiquidByVolme(Double volume);
 
-	List<Liquid> getLiquidByPrice(Integer price);
+	List<T> getLiquidByPrice(Integer price);
 
-	List<Liquid> getLiquidByAmount(Integer amount);
+	List<T> getLiquidByAmount(Integer amount);
 
 }

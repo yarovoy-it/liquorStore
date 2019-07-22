@@ -5,10 +5,10 @@ import java.util.List;
 import by.itacademy.liquorStore.dao.GenericDao;
 import by.itacademy.liquorStore.model.person.PersonDetail;
 
-public interface PersonDetailDao extends GenericDao {
+public interface PersonDetailDao<T extends PersonDetail> extends GenericDao<T> {
 
-	List<PersonDetail> getPersonDetailByAddress(String address);
+	List<T> getPersonDetailByAddress(String address);
 
-	List<PersonDetail> getPersonDetailByPhone(String phone);
+	List<T> getPersonDetailByPhone(String phone);
 
 }

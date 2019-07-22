@@ -5,10 +5,10 @@ import java.util.List;
 import by.itacademy.liquorStore.model.person.PersonDetail;
 import by.itacademy.liquorStore.service.GenericService;
 
-public interface PersonDetailService extends GenericService {
+public interface PersonDetailService<T extends PersonDetail> extends GenericService<T> {
 
-	List<PersonDetail> getPersonDetailByAddress(String address);
+	List<T> getPersonDetailByAddress(String address);
 
-	List<PersonDetail> getPersonDetailByPhone(String phone);
+	List<T> getPersonDetailByPhone(String phone);
 
 }

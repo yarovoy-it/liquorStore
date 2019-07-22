@@ -4,7 +4,7 @@ import java.util.List;
 
 import by.itacademy.liquorStore.model.person.Admin;
 
-public interface AdminDao extends PersonDetailDao {
+public interface AdminDao extends PersonDetailDao<Admin> {
 
 	List<Admin> getCustomerByPosition(String position);
 

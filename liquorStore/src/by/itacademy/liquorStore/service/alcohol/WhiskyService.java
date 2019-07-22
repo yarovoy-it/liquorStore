@@ -1,11 +1,11 @@
 package by.itacademy.liquorStore.service.alcohol;
 
-import java.util.List;
+import java.util.Set;
 
 import by.itacademy.liquorStore.model.alcohol.Whisky;
 
-public interface WhiskyService extends AlcoholService {
+public interface WhiskyService extends AlcoholService<Whisky> {
 
-	List<Whisky> getWhiskyBySpecificities(String specificities);
+	Set<Whisky> getWhiskyBySpecificities(String specificities);
 
 }

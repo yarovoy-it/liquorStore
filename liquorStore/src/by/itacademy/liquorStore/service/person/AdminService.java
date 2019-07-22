@@ -4,7 +4,7 @@ import java.util.List;
 
 import by.itacademy.liquorStore.model.person.Admin;
 
-public interface AdminService extends PersonDetailService {
+public interface AdminService extends PersonDetailService<Admin> {
 
 	List<Admin> getCustomerByPosition(String position);
 

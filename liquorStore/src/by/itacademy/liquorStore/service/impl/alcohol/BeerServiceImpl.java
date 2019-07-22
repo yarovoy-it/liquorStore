@@ -1,11 +1,11 @@
 package by.itacademy.liquorStore.service.impl.alcohol;
 
 import java.util.List;
+import java.util.Optional;
 
 import by.itacademy.liquorStore.dao.alcohol.BeerDao;
 import by.itacademy.liquorStore.dao.impl.alcohol.BeerDaoImpl;
-import by.itacademy.liquorStore.model.alcohol.Alcohol;
-import by.itacademy.liquorStore.model.alcohol.Liquid;
+import by.itacademy.liquorStore.model.alcohol.Beer;
 import by.itacademy.liquorStore.service.alcohol.BeerService;
 
 public class BeerServiceImpl implements BeerService {
@@ -26,69 +26,61 @@ public class BeerServiceImpl implements BeerService {
 	}
 
 	@Override
-	public List<Liquid> getLiquidByVolme(Double volume) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getLiquidByCountry(String country) {
+		return beerDao.getAlcoholByCountry(country);
 	}
 
 	@Override
-	public List<Liquid> getLiquidByPrice(Integer price) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getLiquidByVolme(Double volume) {
+		return beerDao.getLiquidByVolme(volume);
 	}
 
 	@Override
-	public List<Liquid> getLiquidByAmount(Integer amount) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getLiquidByPrice(Integer price) {
+		return beerDao.getLiquidByPrice(price);
 	}
 
 	@Override
-	public Object save(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getLiquidByAmount(Integer amount) {
+		return beerDao.getLiquidByAmount(amount);
 	}
 
 	@Override
-	public Object update(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Beer> save(Beer object) {
+		return beerDao.save(object);
 	}
 
 	@Override
-	public List<Object> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Beer> update(Beer object) {
+		return beerDao.update(object);
 	}
 
 	@Override
-	public Object getByName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getAll() {
+		return (List<Beer>) beerDao.getAll();
 	}
 
 	@Override
-	public void delete(Object object) {
-		// TODO Auto-generated method stub
+	public Optional<Beer> getByName(String name) {
+		return beerDao.getByName(name);
+	}
+
+	@Override
+	public void delete(Beer object) {
+		beerDao.delete(object);
 
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
+		beerDao.deleteAll();
 
 	}
 
 	@Override
-	public void deleteByName(String Name) {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) {
+		beerDao.deleteByName(name);
 
-	}
-
-	@Override
-	public List<Alcohol> getLiquidByCountry(String country) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

@@ -1,21 +1,22 @@
 package by.itacademy.liquorStore.service;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Optional;
 
-public interface GenericService {
+public interface GenericService<T> {
 
-	Object save(Object object);
+	Optional<T> save(T object);
 
-	Object update(Object object);
+	Optional<T> update(T object);
 
-	List<Object> getAll();
+	Collection<T> getAll();
 
-	Object getByName(String Name);
+	Optional<T> getByName(String name);
 
-	void delete(Object object);
+	void delete(T object);
 
 	void deleteAll();
 
-	void deleteByName(String Name);
+	void deleteByName(String name);
 
 }
