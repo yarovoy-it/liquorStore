@@ -6,8 +6,8 @@ import by.itacademy.liquorStore.model.person.Admin;
 
 public interface AdminDao extends PersonDetailDao<Admin> {
 
-	List<Admin> getCustomerByPosition(String position);
+	List<Admin> getAdminByPosition(String position);
 
-	List<Admin> getCustomerByTasks(String tasks);
+	List<Admin> getAdminByTasks(String tasks);
 
 }

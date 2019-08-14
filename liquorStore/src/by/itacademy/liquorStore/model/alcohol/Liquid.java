@@ -1,6 +1,8 @@
 package by.itacademy.liquorStore.model.alcohol;
 
-public abstract class Liquid {
+import by.itacademy.liquorStore.model.base.BaseEntity;
+
+public abstract class Liquid extends BaseEntity {
 
 	private Double volume;
 
@@ -10,7 +12,20 @@ public abstract class Liquid {
 
 	private Integer amount;
 
+	public Liquid() {
+		super();
+	}
+
 	public Liquid(Double volume, String name, Integer price, Integer amount) {
+		super();
+		this.amount = amount;
+		this.volume = volume;
+		this.name = name;
+		this.price = price;
+	}
+
+	public Liquid(Long id, Double volume, String name, Integer price, Integer amount) {
+		super(id);
 		this.amount = amount;
 		this.volume = volume;
 		this.name = name;

@@ -6,8 +6,19 @@ public abstract class Alcohol extends Liquid {
 
 	private Integer alcoholProof;
 
+	public Alcohol() {
+		super();
+	}
+
 	public Alcohol(Double volume, String name, Integer price, String county, Integer alcoholProof, Integer amount) {
 		super(volume, name, price, amount);
+		this.country = county;
+		this.alcoholProof = alcoholProof;
+	}
+
+	public Alcohol(Long id, Double volume, String name, Integer price, String county, Integer alcoholProof,
+			Integer amount) {
+		super(id, volume, name, price, amount);
 		this.country = county;
 		this.alcoholProof = alcoholProof;
 	}
@@ -20,7 +31,7 @@ public abstract class Alcohol extends Liquid {
 		this.country = county;
 	}
 
-	public int getAlcoholProof() {
+	public Integer getAlcoholProof() {
 		return alcoholProof;
 	}
 

@@ -19,7 +19,7 @@ public class WhiskyServiceImpl implements WhiskyService {
 
 	}
 
-	public WhiskyService getInstance() {
+	public static WhiskyService getInstance() {
 		if (instance == null) {
 			instance = new WhiskyServiceImpl();
 		}
@@ -53,7 +53,7 @@ public class WhiskyServiceImpl implements WhiskyService {
 
 	@Override
 	public List<Whisky> getAll() {
-		return (List<Whisky>) whiskyDao.getAll();
+		return whiskyDao.getAll();
 	}
 
 	@Override
@@ -74,12 +74,6 @@ public class WhiskyServiceImpl implements WhiskyService {
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		whiskyDao.deleteByName(name);
-
-	}
-
-	@Override
 	public Set<Whisky> getWhiskyBySpecificities(String specificities) {
 		return whiskyDao.getWhiskyBySpecificities(specificities);
 	}
@@ -87,6 +81,11 @@ public class WhiskyServiceImpl implements WhiskyService {
 	@Override
 	public List<Whisky> getLiquidByCountry(String country) {
 		return whiskyDao.getAlcoholByCountry(country);
+	}
+
+	@Override
+	public Optional<Whisky> getById(Long id) {
+		return whiskyDao.getById(id);
 	}
 
 }

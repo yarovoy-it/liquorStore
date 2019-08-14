@@ -1,28 +1,34 @@
 package by.itacademy.liquorStore.model.alcohol;
 
-public class Wine extends Alcohol {
+import java.io.Serializable;
 
-	private String region;
+import by.itacademy.liquorStore.annotation.FileStorage;
 
-	private static final double volume = 0.75;
+@FileStorage(name = "Wine")
+public class Wine extends Alcohol implements Serializable {
 
-	public Wine(String name, int price, String county, int alcoholProof, String region, int amount) {
+	private String grapeSort;
+
+	private static final Double volume = 0.75;
+
+	public Wine(String name, Integer price, String county, Integer alcoholProof, String grapeSort, Integer amount) {
 		super(volume, name, price, county, alcoholProof, amount);
-		this.region = region;
+		this.grapeSort = grapeSort;
 	}
 
-	public String getRegion() {
-		return region;
+	public String getGrapeSort() {
+		return grapeSort;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
+	public void setGrapeSort(String grapeSort) {
+		this.grapeSort = grapeSort;
 	}
 
 	@Override
 	public String toString() {
-		return "Wine [region=" + region + ", getCounty()=" + getCountry() + ", getAlcoholProof()=" + getAlcoholProof()
-				+ ", getVolume()=" + getVolume() + ", getName()=" + getName() + ", getPrice()=" + getPrice() + "]";
+		return "Wine [grapeSort=" + grapeSort + ", getCountry()=" + getCountry() + ", getAlcoholProof()="
+				+ getAlcoholProof() + ", getAmount()=" + getAmount() + ", getVolume()=" + getVolume() + ", getName()="
+				+ getName() + ", getPrice()=" + getPrice() + ", getId()=" + getId() + "]";
 	}
 
 }

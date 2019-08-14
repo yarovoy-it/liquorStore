@@ -19,11 +19,16 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-	public CustomerService getInstance() {
+	public static CustomerService getInstance() {
 		if (instance == null) {
 			instance = new CustomerServiceImpl();
 		}
 		return instance;
+	}
+
+	@Override
+	public boolean addAlcoholToCustomer(Alcohol alcohol) {
+		return false;
 	}
 
 	@Override
@@ -48,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public List<Customer> getAll() {
-		return (List<Customer>) customerDao.getAll();
+		return customerDao.getAll();
 	}
 
 	@Override
@@ -67,24 +72,23 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		customerDao.deleteByName(name);
-
-	}
-
-	@Override
-	public List<Customer> getCustomerByAlcohol(Alcohol alcohol) {
-		return customerDao.getCustomerByAlcohol(alcohol);
-	}
-
-	@Override
-	public List<Customer> getCustomerByDiscount(int discount) {
+	public List<Customer> getCustomerByDiscount(Integer discount) {
 		return customerDao.getCustomerByDiscount(discount);
 	}
 
 	@Override
 	public List<Customer> getCustomerByStatus(String status) {
 		return customerDao.getCustomerByStatus(status);
+	}
+
+	@Override
+	public List<Customer> getCustomerByAlcohol(String alcohol) {
+		return customerDao.getCustomerByAlcohol(alcohol);
+	}
+
+	@Override
+	public Optional<Customer> getById(Long id) {
+		return customerDao.getById(id);
 	}
 
 }

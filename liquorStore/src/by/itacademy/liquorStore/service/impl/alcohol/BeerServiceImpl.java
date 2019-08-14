@@ -18,7 +18,7 @@ public class BeerServiceImpl implements BeerService {
 
 	}
 
-	public BeerService getInstance() {
+	public static BeerService getInstance() {
 		if (instance == null) {
 			instance = new BeerServiceImpl();
 		}
@@ -57,7 +57,7 @@ public class BeerServiceImpl implements BeerService {
 
 	@Override
 	public List<Beer> getAll() {
-		return (List<Beer>) beerDao.getAll();
+		return beerDao.getAll();
 	}
 
 	@Override
@@ -78,9 +78,8 @@ public class BeerServiceImpl implements BeerService {
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		beerDao.deleteByName(name);
-
+	public Optional<Beer> getById(Long id) {
+		return beerDao.getById(id);
 	}
 
 }

@@ -18,7 +18,7 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	public AdminService getInctance() {
+	public static AdminService getInstance() {
 		if (instance == null) {
 			instance = new AdminServiceImpl();
 		}
@@ -47,7 +47,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<Admin> getAll() {
-		return (List<Admin>) adminDao.getAll();
+		return adminDao.getAll();
 	}
 
 	@Override
@@ -66,18 +66,18 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		adminDao.deleteByName(name);
+	public List<Admin> getAdminByPosition(String position) {
+		return adminDao.getAdminByPosition(position);
 	}
 
 	@Override
-	public List<Admin> getCustomerByPosition(String position) {
-		return adminDao.getCustomerByPosition(position);
+	public List<Admin> getAdminByTasks(String tasks) {
+		return adminDao.getAdminByTasks(tasks);
 	}
 
 	@Override
-	public List<Admin> getCustomerByTasks(String tasks) {
-		return adminDao.getCustomerByTasks(tasks);
+	public Optional<Admin> getById(Long id) {
+		return adminDao.getById(id);
 	}
 
 }

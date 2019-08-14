@@ -1,6 +1,11 @@
 package by.itacademy.liquorStore.model.alcohol;
 
-public class Whisky extends Alcohol {
+import java.io.Serializable;
+
+import by.itacademy.liquorStore.annotation.FileStorage;
+
+@FileStorage(name = "Whisky")
+public class Whisky extends Alcohol implements Serializable {
 
 	private String specificities;
 
@@ -24,9 +29,9 @@ public class Whisky extends Alcohol {
 
 	@Override
 	public String toString() {
-		return "StrongAlcohol [specificities=" + specificities + ", getCounty()=" + getCountry()
-				+ ", getAlcoholProof()=" + getAlcoholProof() + ", getVolume()=" + getVolume() + ", getName()="
-				+ getName() + ", getPrice()=" + getPrice() + "]";
+		return "Whisky [specificities=" + specificities + ", getCountry()=" + getCountry() + ", getAlcoholProof()="
+				+ getAlcoholProof() + ", getAmount()=" + getAmount() + ", getVolume()=" + getVolume() + ", getName()="
+				+ getName() + ", getPrice()=" + getPrice() + ", getId()=" + getId() + "]";
 	}
 
 }

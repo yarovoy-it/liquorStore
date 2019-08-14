@@ -13,4 +13,7 @@ public interface LiquidDao<T extends Alcohol> extends GenericDao<T> {
 
 	List<T> getLiquidByAmount(Integer amount);
 
+	@Override
+	List<T> getAll();
+
 }

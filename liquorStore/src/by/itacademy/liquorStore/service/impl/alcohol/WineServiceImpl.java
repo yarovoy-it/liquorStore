@@ -18,7 +18,7 @@ public class WineServiceImpl implements WineService {
 
 	}
 
-	public WineService getInstance() {
+	public static WineService getInstance() {
 		if (instance == null) {
 			instance = new WineServiceImpl();
 		}
@@ -52,7 +52,7 @@ public class WineServiceImpl implements WineService {
 
 	@Override
 	public List<Wine> getAll() {
-		return (List<Wine>) wineDao.getAll();
+		return wineDao.getAll();
 	}
 
 	@Override
@@ -73,12 +73,6 @@ public class WineServiceImpl implements WineService {
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		wineDao.deleteByName(name);
-
-	}
-
-	@Override
 	public List<Wine> getLiquidByRegion(String region) {
 		return wineDao.getLiquidByRegion(region);
 	}
@@ -86,6 +80,11 @@ public class WineServiceImpl implements WineService {
 	@Override
 	public List<Wine> getLiquidByCountry(String country) {
 		return wineDao.getAlcoholByCountry(country);
+	}
+
+	@Override
+	public Optional<Wine> getById(Long id) {
+		return wineDao.getById(id);
 	}
 
 }

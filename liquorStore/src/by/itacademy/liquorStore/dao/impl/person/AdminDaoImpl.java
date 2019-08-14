@@ -2,18 +2,23 @@ package by.itacademy.liquorStore.dao.impl.person;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 import by.itacademy.liquorStore.dao.person.AdminDao;
 import by.itacademy.liquorStore.model.person.Admin;
 
-import static java.util.Optional.empty;
-
-public class AdminDaoImpl implements AdminDao {
+public class AdminDaoImpl extends PersonalDetailDaoImpl<Admin> implements AdminDao {
 
 	private static AdminDao instance;
 
 	private AdminDaoImpl() {
+		super(Admin.class, (o) -> {
+			Admin admin = null;
+			if (o instanceof Admin) {
+				admin = (Admin) o;
+			}
+			return admin;
+		});
 	}
 
 	public static AdminDao getInstance() {
@@ -25,58 +30,20 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public List<Admin> getPersonDetailByAddress(String address) {
+	public List<Admin> getAdminByPosition(String position) {
+		return getAll()
+				.stream()
+				.filter(a -> a.getPosition().equals(position))
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Admin> getAdminByTasks(String tasks) {
 		return new ArrayList<>();
-	}
-
-	@Override
-	public List<Admin> getPersonDetailByPhone(String phone) {
-		return new ArrayList<>();
-	}
-
-	@Override
-	public Optional<Admin> save(Admin t) {
-		return empty();
-	}
-
-	@Override
-	public Optional<Admin> update(Admin t) {
-		return empty();
 	}
 
 	@Override
 	public List<Admin> getAll() {
-		return new ArrayList<>();
+		return new ArrayList<>(super.getAll());
 	}
-
-	@Override
-	public Optional<Admin> getByName(String name) {
-		return empty();
-	}
-
-	@Override
-	public void delete(Admin t) {
-
-	}
-
-	@Override
-	public void deleteAll() {
-
-	}
-
-	@Override
-	public void deleteByName(String name) {
-
-	}
-
-	@Override
-	public List<Admin> getCustomerByPosition(String position) {
-		return new ArrayList<>();
-	}
-
-	@Override
-	public List<Admin> getCustomerByTasks(String tasks) {
-		return new ArrayList<>();
-	}
-
 }

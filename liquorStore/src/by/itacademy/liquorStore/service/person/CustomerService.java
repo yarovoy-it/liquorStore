@@ -7,10 +7,12 @@ import by.itacademy.liquorStore.model.person.Customer;
 
 public interface CustomerService extends PersonDetailService<Customer> {
 
-	List<Customer> getCustomerByAlcohol(Alcohol alcohol);
+	List<Customer> getCustomerByAlcohol(String alcohol);
 
-	List<Customer> getCustomerByDiscount(int discount);
+	List<Customer> getCustomerByDiscount(Integer discount);
 
 	List<Customer> getCustomerByStatus(String status);
+	
+	boolean addAlcoholToCustomer(Alcohol alcohol);
 
 }

@@ -1,10 +1,13 @@
 package by.itacademy.liquorStore.model.person;
 
+import java.io.Serializable;
 import java.util.List;
 
+import by.itacademy.liquorStore.annotation.FileStorage;
 import by.itacademy.liquorStore.model.alcohol.Alcohol;
 
-public class Customer extends PersonDetail {
+@FileStorage(name = "Customer")
+public class Customer extends PersonalDetail implements Serializable {
 
 	private Integer discount;
 
@@ -15,7 +18,7 @@ public class Customer extends PersonDetail {
 	public Customer() {
 	}
 
-	public Customer(String name, String address, int phone, int discount, String status,
+	public Customer(String name, String address, Integer phone, Integer discount, String status,
 			List<Alcohol> alcohols) {
 		super(name, address, phone);
 		this.discount = discount;
@@ -23,7 +26,7 @@ public class Customer extends PersonDetail {
 		this.alcohols = alcohols;
 	}
 
-	public Customer(String name, String address, int phone, int discount, String status) {
+	public Customer(String name, String address, Integer phone, Integer discount, String status) {
 		super(name, address, phone);
 		this.discount = discount;
 		this.status = status;
@@ -33,7 +36,7 @@ public class Customer extends PersonDetail {
 		return discount;
 	}
 
-	public void setDiscount(int discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 
@@ -55,8 +58,9 @@ public class Customer extends PersonDetail {
 
 	@Override
 	public String toString() {
-		return "Customer [Скидка=" + discount + ", Статус=" + status + ", Имя=" + getName() + ", Адресс=" + getAddress()
-				+ ", Телефон=" + getPhone() + ", Алкоголь=" + alcohols + "]";
+		return "Customer [discount=" + discount + ", status=" + status + ", alcohols=" + alcohols + ", getName()="
+				+ getName() + ", getAddress()=" + getAddress() + ", getPhone()=" + getPhone() + ", getId()=" + getId()
+				+ "]";
 	}
 
 }

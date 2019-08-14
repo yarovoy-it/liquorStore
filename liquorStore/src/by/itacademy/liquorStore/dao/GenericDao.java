@@ -13,10 +13,10 @@ public interface GenericDao<T> {
 
 	Optional<T> getByName(String name);
 
+	Optional<T> getById(Long id);
+
 	void delete(T t);
 
 	void deleteAll();
-
-	void deleteByName(String name);
 
 }

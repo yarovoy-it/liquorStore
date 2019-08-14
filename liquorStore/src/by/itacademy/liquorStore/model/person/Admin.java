@@ -1,8 +1,12 @@
 package by.itacademy.liquorStore.model.person;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Admin extends PersonDetail {
+import by.itacademy.liquorStore.annotation.FileStorage;
+
+@FileStorage(name = "Admin")
+public class Admin extends PersonalDetail implements Serializable {
 
 	private String position;
 
@@ -11,15 +15,16 @@ public class Admin extends PersonDetail {
 	public Admin() {
 	}
 
-	public Admin(String name, String address, int phone, String position, List<String> tasks) {
+	public Admin(String name, String address, Integer phone, String position, List<String> tasks) {
 		super(name, address, phone);
 		this.position = position;
 		this.tasks = tasks;
 	}
 
-	public Admin(String name, String address, int phone, String position) {
-		super(name, address, phone);
+	public Admin(String position, List<String> tasks) {
+		super();
 		this.position = position;
+		this.tasks = tasks;
 	}
 
 	public String getPosition() {
@@ -40,8 +45,8 @@ public class Admin extends PersonDetail {
 
 	@Override
 	public String toString() {
-		return "Admin [position=" + position + ", task=" + tasks + ", getName()=" + getName() + ", getAddress()="
-				+ getAddress() + ", getPhone()=" + getPhone() + "]";
+		return "Admin [position=" + position + ", tasks=" + tasks + ", getName()=" + getName() + ", getAddress()="
+				+ getAddress() + ", getPhone()=" + getPhone() + ", getId()=" + getId() + "]";
 	}
 
 }

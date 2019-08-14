@@ -1,6 +1,8 @@
 package by.itacademy.liquorStore.model.person;
 
-public class PersonDetail {
+import by.itacademy.liquorStore.model.base.BaseEntity;
+
+public abstract class PersonalDetail extends BaseEntity {
 
 	private String name;
 
@@ -8,10 +10,11 @@ public class PersonDetail {
 
 	private Integer phone;
 
-	public PersonDetail() {
+	public PersonalDetail() {
 	}
 
-	public PersonDetail(String name, String address, int phone) {
+	public PersonalDetail(String name, String address, Integer phone) {
+		super();
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
@@ -37,7 +40,7 @@ public class PersonDetail {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(Integer phone) {
 		this.phone = phone;
 	}
 
